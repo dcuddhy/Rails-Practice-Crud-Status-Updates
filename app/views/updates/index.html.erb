@@ -1,0 +1,18 @@
+index
+<br>
+<%= link_to "Make a Status Update", new_update_path %>
+<br>
+<%= notice %>
+<table>
+
+    <% @updates.each do |update| %>
+  <tr>
+        <td><%= update.status %></td>
+        <td><%= update.user %></td>
+        <td><%= update.likes %></td>
+        <td><%= link_to "Show", update_path(update) %></td>
+        <td><%= link_to "Edit", edit_update_path(update) %></td>
+        <td><%= link_to "Delete", update_path(update), method: :delete %></td>
+  </tr>
+    <% end %>
+</table>
